@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Presentation Player:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Presentation_Player_jar</output-path>
+    <root id="archive" name="Presentation Player.jar">
+      <element id="module-output" name="Presentation Player" />
+    </root>
+  </artifact>
+</component>
