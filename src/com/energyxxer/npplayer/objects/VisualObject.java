@@ -10,6 +10,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -210,4 +212,19 @@ public abstract class VisualObject {
     public VisualState cloneDefaultState() {
         return defaultState.clone();
     }
+
+    public void writeToFile(DataOutputStream dos) throws IOException {
+        //Type ID
+        dos.writeByte(getTypeID());
+        //Start keyframe
+        dos.writeInt(this.getStart());
+        //Duration
+        dos.writeInt(this.getEnd() - this.getStart());
+        //Default state
+        defaultState.writeToFile(dos);
+
+        //Transition count
+    }
+
+    public abstract byte getTypeID();
 }

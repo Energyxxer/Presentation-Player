@@ -3,6 +3,8 @@ package com.energyxxer.npplayer.state;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 /**
  * Created by User on 3/26/2017.
@@ -89,5 +91,21 @@ public class VisualState {
 
     public VisualState clone() {
         return new VisualState(new Point(position.x,position.y), new Dimension(size.width,size.height), rotation.clone(), color, opacity);
+    }
+
+    public void writeToFile(DataOutputStream dos) throws IOException {
+        dos.writeShort(position.x);
+        dos.writeShort(position.y);
+        dos.writeShort(size.width);
+        dos.writeShort(size.height);
+        dos.writeDouble(rotation.angle);
+        dos.writeByte(rotation.locked ? 1 : 0);
+        dos.writeShort(rotation.origin.x);
+        dos.writeShort(rotation.origin.y);
+        dos.writeByte(color.getRed()   - 128);
+        dos.writeByte(color.getGreen() - 128);
+        dos.writeByte(color.getBlue()  - 128);
+        dos.writeByte(color.getAlpha() - 128);
+        dos.writeByte((byte) (opacity * 255));
     }
 }

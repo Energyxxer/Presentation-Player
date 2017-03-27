@@ -56,10 +56,10 @@ public class NewTestPresentation extends Presentation {
             VisualState state3 = state2.clone();
             state3.translate(new Vector2D(0,-720));
             obj.putTransition(75, state3);
-            //objects.add(obj);
+            objects.add(obj);
         }
         {
-            VisualObject obj = new TextObject(0, 100, new Point(100, 300), new Dimension(100, 100), "HI", new Font("Tahoma", Font.BOLD, 50), Color.GREEN);
+            VisualObject obj = new TextObject(0, 100, new Point(100, 300), new Dimension(100, 100), "O", new Font("Tahoma", Font.BOLD, 50), Color.GREEN);
 
             VisualState state1 = obj.cloneDefaultState();
             state1.setPosition(new Point(588, 175));
@@ -75,7 +75,7 @@ public class NewTestPresentation extends Presentation {
             VisualState state3 = state2.clone();
             state3.translate(new Vector2D(0,-720));
             obj.putTransition(75, state3);
-            objects.add(obj);
+            //objects.add(obj);
         }
         {
             VisualObject obj = new ImageObject(0, 100, new Point(100, 300), new Dimension(100, 100), "/assets/mendiants/mendiants0.png");
@@ -94,7 +94,7 @@ public class NewTestPresentation extends Presentation {
             VisualState state3 = state2.clone();
             state3.translate(new Vector2D(0,-720));
             obj.putTransition(75, state3);
-            objects.add(obj);
+            //objects.add(obj);
         }
         objects.add(new EffectObject(0, 1000));
     }

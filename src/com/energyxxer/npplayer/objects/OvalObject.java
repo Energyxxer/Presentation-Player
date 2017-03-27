@@ -28,4 +28,9 @@ public class OvalObject extends VisualObject {
 
         return true;
     }
+
+    @Override
+    public byte getTypeID() {
+        return 0;
+    }
 }

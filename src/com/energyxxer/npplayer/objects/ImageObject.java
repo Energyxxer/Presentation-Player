@@ -80,4 +80,9 @@ public class ImageObject extends VisualObject {
     private static Rectangle centerDimension(Dimension dim, Dimension bounds) {
         return new Rectangle((bounds.width/2)-(dim.width/2),(bounds.height/2)-(dim.height/2),dim.width,dim.height);
     }
+
+    @Override
+    public byte getTypeID() {
+        return 0;
+    }
 }
